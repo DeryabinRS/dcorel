@@ -17,7 +17,9 @@ import AccountMenu from "@/Components/AccountMenu";
 import MenuItem from "@mui/material/MenuItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 
-import {BiExit, FaUserAlt, MdDashboard} from "react-icons/all";
+import { MdDashboard } from "react-icons/md";
+import { FaUserAlt } from "react-icons/fa";
+import { BiExit } from 'react-icons/bi';
 import NavLink from "@/Components/NavLink";
 import {useState} from "react";
 
