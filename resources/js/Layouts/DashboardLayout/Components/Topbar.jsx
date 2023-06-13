@@ -15,7 +15,7 @@ const Topbar = () => {
     const handleMode = () => setDarkTheme(!darkTheme);
 
     return (
-        <Box display="flex" justifyContent="space-between" p={2}>
+        <Box display="flex" justifyContent="space-between" p={2} className="b-gray-200">
             {/* SEARCh BAR */}
             <Box
                 display="flex"

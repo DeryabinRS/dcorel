@@ -25,10 +25,10 @@ const arrMenu = [
     {id: 4, title:'Users', url:'/dashboard/users', icon: 'MdPeople', submenu: []},
 ]
 
-const SidebarItem = ({title, to, icon, selected}) => {
+const SidebarItem = ({title, url, icon, selected}) => {
     const Icon = icon ? MaterialIcons[icon] : null;
     return (
-        <MenuItem icon={<Icon/>} active={selected} routerLink={<Link href={to} selected={selected}/>}>{title}</MenuItem>
+        <Link href={url} selected={selected}><MenuItem icon={<Icon/>} active={selected}>{title}</MenuItem></Link>
     )
 }
 
@@ -39,7 +39,7 @@ const SidebarApp = () => {
 
     return (
         <Box>
-            <Sidebar>
+            <Sidebar className="min-h-screen bg-gray-50">
                 <Box sx={{m:"20px 15px", fontSize: "30px"}} display="flex" justifyContent={!collapsed ? 'end' : 'center'}>
                     <button onClick={() => collapseSidebar()}><MdMenu/></button>
                 </Box>
@@ -66,7 +66,7 @@ const SidebarApp = () => {
                     </Box>
                 )}
                 <Menu>
-                    {arrMenu.map(item => <SidebarItem key={item.id} title={item.title} to={item.url} icon={item.icon}/>)}
+                    {arrMenu.map(item => <SidebarItem key={item.id} title={item.title} url={item.url} icon={item.icon}/>)}
                     {/*<SubMenu label="Charts">*/}
                     {/*    <MenuItem> Pie charts </MenuItem>*/}
                     {/*    <MenuItem> Line charts </MenuItem>*/}
