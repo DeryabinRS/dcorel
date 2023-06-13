@@ -1,6 +1,7 @@
-import {Head} from "@inertiajs/react";
-import {CssBaseline, Grid, Paper, Box} from "@mui/material";
+import {Head, Link} from "@inertiajs/react";
+import { CssBaseline, Grid, Paper, Box } from "@mui/material";
 import cls from './AuthLayout.module.scss';
+import { MdBackspace } from "react-icons/md";
 
 export default function AuthLayout({ children, title }) {
     return (
@@ -13,8 +14,8 @@ export default function AuthLayout({ children, title }) {
                     xs={false}
                     sm={4}
                     md={8}
+                    lg={9}
                     sx={{
-                        // backgroundImage: 'url(https://catherineasquithgallery.com/uploads/posts/2021-02/1612874623_87-p-krasno-belii-fon-oboi-106.jpg)',
                         backgroundRepeat: 'no-repeat',
                         background: 'linear-gradient(to left, #8f94fb, #4e54c8);',
                         backgroundSize: 'cover',
@@ -35,7 +36,8 @@ export default function AuthLayout({ children, title }) {
                         <li></li>
                     </ul>
                 </Grid>
-                <Grid item xs={12} sm={8} md={4} component={Paper} elevation={6} square>
+                <Grid item xs={12} sm={8} md={4} lg={3} component={Paper} elevation={6} square>
+                    <Link href={'/'}><MdBackspace size={40} color={'#1565c0'} className="ml-5 mt-3"/></Link>
                     <Box
                         sx={{
                             margin: '30px auto',
@@ -43,6 +45,7 @@ export default function AuthLayout({ children, title }) {
                             flexDirection: 'column',
                             alignItems: 'center',
                             maxWidth: '400px',
+                            padding: '20px',
                         }}
                     >
                         {children}
